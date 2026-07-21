@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>麻薯小狗</title>
+  <meta name="theme-color" content="#4b5b45">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="麻薯小狗">
+  <link rel="manifest" href="./manifest.webmanifest?v=20260722m1">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=20260722m1">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">公开资料整理版</p>
+        <h1>麻薯小狗</h1>
+      </div>
+      <button class="icon-button" id="undoBtn" type="button" aria-label="撤回上一天">↶</button>
+    </header>
+
+    <section class="notice-panel">
+      <strong>已过滤调酒、甜品、纯 tips 和单品推荐；含汤内容按少汤热菜/配菜口径整理。</strong>
+      <p>可以先看详情，再把想执行的餐单加入循环；打完当前餐单后自动进入下一份所选餐单。</p>
+    </section>
+
+    <section class="stat-grid" aria-label="餐单统计">
+      <div>
+        <span>可打卡餐单</span>
+        <strong id="availableCount">0</strong>
+      </div>
+      <div>
+        <span>已选循环</span>
+        <strong id="selectedCount">0</strong>
+      </div>
+      <div>
+        <span>完成记录</span>
+        <strong id="historyTotal">0</strong>
+      </div>
+    </section>
+
+    <section class="cycle-panel">
+      <div>
+        <span class="label">当前进度</span>
+        <strong id="cycleTitle">第 1 轮 · 第 1 天</strong>
+        <p id="cycleSub">短期餐单循环打卡</p>
+      </div>
+      <div class="meter" aria-label="今日完成度">
+        <span id="percentText">0%</span>
+      </div>
+    </section>
+
+    <section class="plan-panel">
+      <div class="section-head">
+        <h2 id="activeTitle">今日打卡</h2>
+        <span id="slotCount">0/0</span>
+      </div>
+      <p class="panel-sub" id="activeSub">先从餐单库选择要循环的餐单。</p>
+      <div class="meal-list" id="mealList"></div>
+      <p class="auto-note" id="autoNote">打完所有餐次后，会短暂停留并自动进入下一天。</p>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>全部餐单可选择</h2>
+        <button class="text-button" id="addAllBtn" type="button">全部加入</button>
+      </div>
+      <div class="filter-bar" id="filterBar" aria-label="餐单分类"></div>
+      <div class="detail-panel" id="detailPanel" aria-live="polite"></div>
+      <div class="plan-list" id="planList"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>我的循环</h2>
+        <button class="text-button" id="clearCycleBtn" type="button">清空已选</button>
+      </div>
+      <div class="cycle-list" id="cycleList"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>完成记录</h2>
+        <span id="historyCount">0 天</span>
+      </div>
+      <div class="history-list" id="historyList"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>待补正文</h2>
+        <span id="pendingCount">0 个</span>
+      </div>
+      <div class="pending-list" id="pendingList"></div>
+    </section>
+
+    <section class="source-panel">
+      <h2>来源与边界</h2>
+      <p>根据用户提供的小红书主页和已登录后可读的“麻薯小狗泥”公开笔记正文整理，非博主官方授权。能转成全天执行结构的做成可打卡餐单；纯技巧、甜品、饮品单品和外卖推荐库放入待补/排除说明。</p>
+      <p>餐单包含短期恢复、液断和小基数较激烈食谱。身体不舒服、低血糖、经期明显不适、备孕/孕期/哺乳期、疾病或用药期间不要硬跟。</p>
+      <button class="text-button danger" id="resetBtn" type="button">重置全部打卡数据</button>
+    </section>
+  </main>
+  <script src="./app.js?v=20260722m1"></script>
+</body>
+</html>
