@@ -1,10 +1,10 @@
-const CACHE_NAME = "mashu-diet-loop-20260722t1";
+const CACHE_NAME = "mashu-diet-loop-20260722t1-nozoom-20260824";
 const ASSETS = [
   "./",
   "./index.html",
   "./styles.css?v=20260722t1",
   "./app.js?v=20260722t1",
-  "./manifest.webmanifest?v=20260722t1",
+  "./manifest.webmanifest?v=nozoom-20260824",
   "./icon.svg"
 ];
 
